@@ -9,3 +9,9 @@
     text-decoration: none;
     background-color: #1d963b;
 }
+#welcomeText{
+    color: white;
+    background: url('images/background.png') center center fixed;
+    background-size: cover;
+    padding: 10% 0;
+}
