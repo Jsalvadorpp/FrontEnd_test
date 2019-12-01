@@ -11,7 +11,7 @@
 }
 #welcomeText{
     color: white;
-    background: url('images/background.png') center center fixed;
+    background: url('images/background.jpg') center center fixed;
     background-size: cover;
     padding: 10% 0;
 }
