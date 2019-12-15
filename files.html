@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/bootstrap-4-navbar.min.css">
+    <link rel="stylesheet" href="styles/styles.css" type="text/css">
+
+    <!--@ font awesome icons -->
+    <script src='./scripts/all.min.js'></script>
+
+</head>
+
+<body>
+
+    <!--$ navigation Bar -->
+    <!--$ -------------------------------------------------- -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+            <a class="navbar-brand" href="#"><img src='images/Unexpo-Logo2.png' width="55px" height="45px">Unexpo</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id='navbar-toggler'>
+                <ul class='navbar-nav nav-pills'>
+                    <li><a href='#' class='nav-link'><i class="fa fa-home mx-1" style="font-size: 20px"></i>Inicio</a></li>
+            
+                    <li class='nav-item dropdown'>
+                        <a href='#' class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-book mx-1" style="font-size: 20px"></i>Biblioteca</a>
+                        <div class='dropdown-menu'>
+                                <a class="dropdown-item" href="#">Todos los Archivos</a>
+
+                                <a class="dropdown-item dropdown-toggle" href="#">Por Mencion</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">General</a>
+                                    <a class="dropdown-item" href="#">Computacion</a>
+                                    <a class="dropdown-item" href="#">Comunicaciones</a>
+                                    <a class="dropdown-item" href="#">Control</a>
+                                </div>
+
+                                <a class="dropdown-item dropdown-toggle" href="#">Por Semestre</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">IV</a>
+                                    <a class="dropdown-item" href="#">V</a>
+                                    <a class="dropdown-item" href="#">VI</a>
+                                    <a class="dropdown-item" href="#">VII</a>
+                                    <a class="dropdown-item" href="#">VIII</a>
+                                    <a class="dropdown-item" href="#">IX</a>
+                                </div>
+                        </div>
+                     </li>
+                 </ul>
+
+                <ul class='navbar-nav ml-auto nav-pills'>
+
+                    <!--
+                    <form class='form-inline'>
+                        <div class='input-group'>
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                            <div class='input-group-append'>
+                                <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                    -->
+
+                    <li><a href="#" class="nav-link"><i class="fa fa-search mx-1" style="font-size: 20px"></i>Buscar</a></li>
+                    <li><a href="#" class="nav-link"><i class="fas fa-sign-in-alt mx-1" style="font-size: 20px"></i>Entrar</a></li>
+                
+                    <!--# -------------------------------------------------- -->
+                    <!--# nav-bar with login
+                        <li><a href="#" class="nav-link"><i class="fa fa-upload mx-1" style="font-size: 20px"></i>Subir</a></li>
+                        <li><a href="#" class="nav-link"><i class="fa fa-user mx-1" style="font-size: 20px"></i>Perfil</a></li>
+                        <li><a href="#" class="nav-link"><i class="fas fa-sign-out-alt mx-1" style="font-size: 20px"></i>Salir</a></li>
+                    -->
+                    <!--# -------------------------------------------------- -->
+
+                </ul>
+            </div>     
+    </nav>
+    <!--$ -------------------------------------------------- -->
+
+    <!--$ -------------------------------------------------- -->
+    <!--$ fileFilters -->
+    <div class='container-fluid' id='fileFilters'>
+
+        <!--% fileFilters -->
+        <div class='row' id='fileFilters'>
+            <div class='col-md-4 text-center'>
+                <h4 class="d-block bg-dark text-white my-2">Semestre</h4>
+                <select name="fileSemester" class="custom-select">
+                    <option selected value='todos'>Todos</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                </select>
+            </div>
+
+            <div class='col-md-4 text-center'>
+                <h4 class="d-block bg-dark text-white my-2">Menci&oacute;n</h4>
+                <select name="fileCategory" class="custom-select">
+                    <option selected value='todos'>Todos</option>
+                    <option value="general">General</option>
+                    <option value="computacion">Computaci&oacute;n</option>
+                    <option value="control">Control</option>
+                    <option value="Comunicaciones">Comunicaciones</option>
+                </select>
+            </div>
+
+            <div class='col-md-4 text-center'>
+                <h4 class="d-block bg-dark text-white my-2">Tipo de archivo</h4>
+                <select name="fileType" class="custom-select">
+                    <option selected value='todos'>Todos</option>
+                    <option value="documentos">Documentos</option>
+                    <option value="imagen">Imagen</option>
+                    <option value="aplicacion">Aplicaci&oacute;n</option>
+                </select>
+            </div>
+        </div>
+        <!--% -------------------------------------------------- -->
+        
+    </div>
+    <!--$ -------------------------------------------------- -->
+
+
+    <!--$ -------------------------------------------------- -->
+    <!--$ files result -->
+    <div class='container-fluid' id='filesResult'>
+        <div class='container-fluid text-center my-2' id='files-title'>
+            <h2>Archivos</h2>
+        </div>
+        <hr>
+        <h3 class='text-center'>p&aacute;gina 1 de 10</h3>
+        <hr>
+
+        <table class='table-bordered' style="width:100%">
+
+            <!--+ file card -->
+            <tr>
+                <!--% file extension icon -->
+                <td style="width:5%" class='d-none d-sm-table-cell' >
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-powerpoint d-block'>PowerPoint</a>
+                    </div>
+                </td>
+                <!--% file details -->
+                <td style="width: 85%">
+                    <h6 class='card-title font-weight-bold mb-0'>Guia de laboratorio de control</h6>
+                    <small class='card-subtitle text-muted'>Subido por:<a href='#'>Jose Peroza</a></small>
+                    <div class='tags'>Tags: 
+                        <a href="/tags/files?tag=png" class="badge badge-secondary">png</a>
+                        <a href="/tags/files?tag=foto" class="badge badge-secondary">foto</a>
+                        <a href="/tags/files?tag=importante" class="badge badge-secondary">importante</a>
+                        <a href="/tags/files?tag=salu2" class="badge badge-secondary">salu2</a>
+                    </div>
+                </td>
+                <!--% view file -->
+                <td style="width:10%" class='text-center'>
+
+                    <!--@ file extension icon for mobile-->
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-powerpoint d-block d-sm-none'>PowerPoint</a>
+                    </div>
+
+                    <a href="#" role="button" class="btn btn-dark d-block">Ver archivo</a>
+                </td>
+            </tr>
+
+            <!--+ file card -->
+            <tr>
+                <!--% file extension icon -->
+                <td style="width:5%" class='d-none d-sm-table-cell' >
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-img d-block'>Imagen</a>
+                    </div>
+                </td>
+                <!--% file details -->
+                <td style="width: 85%">
+                    <h6 class='card-title font-weight-bold mb-0'>Guia de laboratorio de control</h6>
+                    <small class='card-subtitle text-muted'>Subido por:<a href='#'>Jose Peroza</a></small>
+                    <div class='tags'>Tags: 
+                        <a href="/tags/files?tag=png" class="badge badge-secondary">png</a>
+                        <a href="/tags/files?tag=foto" class="badge badge-secondary">foto</a>
+                        <a href="/tags/files?tag=importante" class="badge badge-secondary">importante</a>
+                        <a href="/tags/files?tag=salu2" class="badge badge-secondary">salu2</a>
+                    </div>
+                </td>
+                <!--% view file -->
+                <td style="width:10%" class='text-center'>
+
+                    <!--@ file extension icon for mobile-->
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-img d-block d-sm-none'>Imagen</a>
+                    </div>
+
+                    <a href="#" role="button" class="btn btn-dark d-block">Ver archivo</a>
+                </td>
+            </tr>
+
+            <!--+ file card -->
+            <tr>
+                <!--% file extension icon -->
+                <td style="width:5%" class='d-none d-sm-table-cell' >
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-pdf d-block'>Pdf</a>
+                    </div>
+                </td>
+                <!--% file details -->
+                <td style="width: 85%">
+                    <h6 class='card-title font-weight-bold mb-0'>Guia de laboratorio de control</h6>
+                    <small class='card-subtitle text-muted'>Subido por:<a href='#'>Jose Peroza</a></small>
+                    <div class='tags'>Tags: 
+                        <a href="/tags/files?tag=png" class="badge badge-secondary">png</a>
+                        <a href="/tags/files?tag=foto" class="badge badge-secondary">foto</a>
+                        <a href="/tags/files?tag=importante" class="badge badge-secondary">importante</a>
+                        <a href="/tags/files?tag=salu2" class="badge badge-secondary">salu2</a>
+                    </div>
+                </td>
+                <!--% view file -->
+                <td style="width:10%" class='text-center'>
+
+                    <!--@ file extension icon for mobile-->
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-pdf d-block d-sm-none'>Pdf</a>
+                    </div>
+
+                    <a href="#" role="button" class="btn btn-dark d-block">Ver archivo</a>
+                </td>
+            </tr>
+
+            <!--+ file card -->
+            <tr>
+                <!--% file extension icon -->
+                <td style="width:5%" class='d-none d-sm-table-cell' >
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-word d-block'>Word</a>
+                    </div>
+                </td>
+                <!--% file details -->
+                <td style="width: 85%">
+                    <h6 class='card-title font-weight-bold mb-0'>Guia de laboratorio de control</h6>
+                    <small class='card-subtitle text-muted'>Subido por:<a href='#'>Jose Peroza</a></small>
+                    <div class='tags'>Tags: 
+                        <a href="/tags/files?tag=png" class="badge badge-secondary">png</a>
+                        <a href="/tags/files?tag=foto" class="badge badge-secondary">foto</a>
+                        <a href="/tags/files?tag=importante" class="badge badge-secondary">importante</a>
+                        <a href="/tags/files?tag=salu2" class="badge badge-secondary">salu2</a>
+                    </div>
+                </td>
+                <!--% view file -->
+                <td style="width:10%" class='text-center'>
+
+                    <!--@ file extension icon for mobile-->
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-word d-block d-sm-none'>Word</a>
+                    </div>
+
+                    <a href="#" role="button" class="btn btn-dark d-block">Ver archivo</a>
+                </td>
+            </tr>
+
+            <!--+ file card -->
+            <tr>
+                <!--% file extension icon -->
+                <td style="width:5%" class='d-none d-sm-table-cell' >
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-application d-block'>Aplicacion</a>
+                    </div>
+                </td>
+                <!--% file details -->
+                <td style="width: 85%">
+                    <h6 class='card-title font-weight-bold mb-0'>Guia de laboratorio de control</h6>
+                    <small class='card-subtitle text-muted'>Subido por:<a href='#'>Jose Peroza</a></small>
+                    <div class='tags'>Tags: 
+                        <a href="/tags/files?tag=png" class="badge badge-secondary">png</a>
+                        <a href="/tags/files?tag=foto" class="badge badge-secondary">foto</a>
+                        <a href="/tags/files?tag=importante" class="badge badge-secondary">importante</a>
+                        <a href="/tags/files?tag=salu2" class="badge badge-secondary">salu2</a>
+                    </div>
+                </td>
+                <!--% view file -->
+                <td style="width:10%" class='text-center'>
+
+                    <!--@ file extension icon for mobile-->
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-application d-block d-sm-none'>Aplicacion</a>
+                    </div>
+
+                    <a href="#" role="button" class="btn btn-dark d-block">Ver archivo</a>
+                </td>
+            </tr>
+
+            <!--+ file card -->
+            <tr>
+                <!--% file extension icon -->
+                <td style="width:5%" class='d-none d-sm-table-cell' >
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-other d-block'>Otros</a>
+                    </div>
+                </td>
+                <!--% file details -->
+                <td style="width: 85%">
+                    <h6 class='card-title font-weight-bold mb-0'>Guia de laboratorio de control</h6>
+                    <small class='card-subtitle text-muted'>Subido por:<a href='#'>Jose Peroza</a></small>
+                    <div class='tags'>Tags: 
+                        <a href="/tags/files?tag=png" class="badge badge-secondary">png</a>
+                        <a href="/tags/files?tag=foto" class="badge badge-secondary">foto</a>
+                        <a href="/tags/files?tag=importante" class="badge badge-secondary">importante</a>
+                        <a href="/tags/files?tag=salu2" class="badge badge-secondary">salu2</a>
+                    </div>
+                </td>
+                <!--% view file -->
+                <td style="width:10%" class='text-center'>
+
+                    <!--@ file extension icon for mobile-->
+                    <div class='text-center' >
+                        <a href="#" role="button" class='btn fileType-other d-block d-sm-none'>Otros</a>
+                    </div>
+
+                    <a href="#" role="button" class="btn btn-dark d-block">Ver archivo</a>
+                </td>
+            </tr>
+
+
+        </table>
+
+        <hr>
+
+        <!--+ pagination -->
+        <ul class="pagination justify-content-center">
+      
+            <li class="page-item disabled">
+                <a class="page-link" href="/files?category=General&page=" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+          
+            <li class="page-item">
+                <a class="page-link" href="/files?category=General&page=1">1</a>
+            </li>
+          
+                
+            <li class="page-item enabled">
+                <a class="page-link" href="/files?category=General&page=2" tabindex="-1" aria-disabled="true">Next</a>
+            </li>
+        </ul>
+
+    </div>
+    <!--$ -------------------------------------------------- -->
+    
+
+    <!--$ -------------------------------------------------- -->
+    <!--$ Footer -->
+    <footer class='text-white bg-dark'>
+        <div class="container">
+            <div class="row text-center py-2">
+
+                <div class="col-sm-4 my-auto">
+                    <p>Realizado por:</p>
+                    <p>Alejandro Aguilar</p>
+                    <p>Jose Salvador Peroza</p>
+                </div>
+
+                <div class='col-sm-4 my-auto'>
+                    <p>Accede también a la pagina oficial de la UNEXPO</p>
+                    <p><a href="www.bqto.unexpo.edu.ve">bqto.unexpo.edu.ve</a></p>
+                </div>
+
+                <div class='col-sm-4 my-auto'>
+                    <image src='images/Promo56190.png' class='img-fluid' width='120px' height='120px'></image>
+                </div>
+    
+            </div>
+        </div>
+
+        <div class="col-12 text-center py-1" id='footer-copyright'>
+                <h5>&copy; 2019 unexporepositorio.com</h5>
+            </div>
+    </footer>
+    <!--$ -------------------------------------------------- -->
+
+    <!--$ Scripts -->
+    <!--$ -------------------------------------------------- -->
+    <script src="./scripts/scrollreveal.min.js" type="text/javascript" ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./scripts/bootstrap-4-navbar.min.js" type="text/javascript" ></script>
+    <script src="./scripts/jquery.touchSwipe.min.js" type="text/javascript" ></script>
+    <!--$ -------------------------------------------------- -->
+</body>
+ 
+</html>
